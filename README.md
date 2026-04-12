@@ -1,8 +1,11 @@
 
-  # Interactive Web Developer Portfolio
+  # My Portfolio
 
-  This is a code bundle for Interactive Web Developer Portfolio. The original project is available at https://www.figma.com/design/AU5YnjU0kGcpLj9HYJVZFq/Interactive-Web-Developer-Portfolio.
+showcasing my tech background and projects
+  # Live link
 
+  https://my-portfolio-psi-six-76.vercel.app/
+  
   ## Running the code
 
   Run `npm i` to install the dependencies.
