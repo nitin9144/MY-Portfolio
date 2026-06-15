@@ -37,7 +37,7 @@ export function AboutSection() {
           >
             <div className="rounded-2xl overflow-hidden border border-border aspect-square max-w-sm mx-auto">
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1566915896913-549d796d2166?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXZlbG9wZXIlMjB3b3Jrc3BhY2UlMjBjb2Rpbmd8ZW58MXx8fHwxNzc0MjY1MTczfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                src="/photo.jpg"
                 alt="Developer"
                 className="w-full h-full object-cover"
               />

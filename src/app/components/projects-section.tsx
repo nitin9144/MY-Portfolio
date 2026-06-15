@@ -22,17 +22,17 @@ type Project = {
 const projects: Project[] = [
   {
     id: 1,
-    title: "ShopFlow - E-Commerce Platform",
-    description: "A full-stack e-commerce application with cart, payments, and admin dashboard.",
+    title: "Faculty Availability Tracker For Students",
+    description: "Realtime availability tracker of faculty in college for students",
     longDescription:
-      "Built a complete e-commerce solution with user auth, product catalog, cart management, Stripe payments, and a comprehensive admin dashboard for managing inventory and orders.",
+      "Students often waste time visiting faculty rooms only to find them unavailable — in meetings, on leave, or out of campus. There's no centralized system to check a faculty member's current status or schedule. This app solves that.",
     image:
-      "https://images.unsplash.com/photo-1642132652860-471b4228023e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlY29tbWVyY2UlMjB3ZWJzaXRlJTIwZGFzaGJvYXJkfGVufDF8fHx8MTc3NDI3NzQ4OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    techStack: ["React", "Node.js", "MongoDB", "Stripe", "Tailwind CSS"],
-    github: "https://github.com/yourusername/shopflow",
-    live: "https://shopflow-demo.vercel.app",
+      "/Faculty_Availability_Tracker.png",
+    techStack: ["React", "Node.js", "Supabase", "Tailwind CSS","Postgresql","Figma"],
+    github: "https://github.com/nitin9144/Faculty_Availability_Tracker-For-Students-.git",
+    live: "https://faculty-availability-tracker-for-st.vercel.app/",
     category: "major",
-    highlights: ["JWT Auth & Role-based access", "Payment integration with Stripe", "Admin dashboard with analytics"],
+    highlights: ["JWT Auth & Role-based access", "Supabase integration","Only college students and faculty can use this app"],
   },
   {
     id: 2,
@@ -47,59 +47,6 @@ const projects: Project[] = [
     live: "https://chatverse-demo.vercel.app",
     category: "major",
     highlights: ["WebSocket real-time communication", "File sharing with preview", "Online status & typing indicators"],
-  },
-  {
-    id: 3,
-    title: "TaskBoard - Project Management",
-    description: "A Kanban-style task management tool with drag-and-drop and team collaboration.",
-    longDescription:
-      "Kanban board inspired by Trello, featuring drag-and-drop task management, team collaboration with real-time updates, labels, due dates, and progress tracking.",
-    image:
-      "https://images.unsplash.com/photo-1758876202468-5ffe0ee61f07?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0YXNrJTIwbWFuYWdlbWVudCUyMGthbmJhbiUyMGJvYXJkfGVufDF8fHx8MTc3NDM2NzU2MHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    techStack: ["React", "Firebase", "React DnD", "Tailwind CSS"],
-    github: "https://github.com/yourusername/taskboard",
-    live: "https://taskboard-demo.vercel.app",
-    category: "major",
-    highlights: ["Drag & drop interface", "Real-time collaboration", "Labels, due dates & filters"],
-  },
-  {
-    id: 4,
-    title: "WeatherNow",
-    description: "A beautiful weather app with 5-day forecasts and location-based data.",
-    longDescription: "Clean weather application fetching real-time data from OpenWeatherMap API with geo-location support, 5-day forecasts, and animated weather icons.",
-    image:
-      "https://images.unsplash.com/photo-1630442923896-244dd3717b35?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWF0aGVyJTIwYXBwJTIwbW9iaWxlfGVufDF8fHx8MTc3NDM2NzU2MHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    techStack: ["React", "OpenWeather API", "CSS Modules"],
-    github: "https://github.com/yourusername/weathernow",
-    live: "https://weathernow-demo.vercel.app",
-    category: "minor",
-    highlights: ["Geolocation support", "5-day forecast view"],
-  },
-  {
-    id: 5,
-    title: "DevBlog",
-    description: "A Markdown-powered blog platform with syntax highlighting and SEO.",
-    longDescription: "Personal blogging platform with Markdown rendering, code syntax highlighting, SEO optimization, and a clean reading experience.",
-    image:
-      "https://images.unsplash.com/photo-1638342863994-ae4eee256688?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxibG9nJTIwcGxhdGZvcm0lMjB3ZWJzaXRlfGVufDF8fHx8MTc3NDM2NzU2MHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    techStack: ["Next.js", "MDX", "Tailwind CSS"],
-    github: "https://github.com/yourusername/devblog",
-    live: "https://devblog-demo.vercel.app",
-    category: "minor",
-    highlights: ["Markdown support", "Code syntax highlighting"],
-  },
-  {
-    id: 6,
-    title: "CalcMaster",
-    description: "A scientific calculator with history, unit converter, and keyboard shortcuts.",
-    longDescription: "Feature-rich calculator with scientific functions, history tracking, unit conversions, and full keyboard shortcut support.",
-    image:
-      "https://images.unsplash.com/photo-1574607383077-47ddc2dc51c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYWxjdWxhdG9yJTIwYXBwJTIwbWluaW1hbHxlbnwxfHx8fDE3NzQzNjc1NjF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    techStack: ["HTML", "CSS", "JavaScript"],
-    github: "https://github.com/yourusername/calcmaster",
-    live: "https://calcmaster-demo.vercel.app",
-    category: "minor",
-    highlights: ["Scientific functions", "Keyboard shortcuts"],
   },
 ];
 

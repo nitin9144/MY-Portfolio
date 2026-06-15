@@ -6,11 +6,13 @@ import { SkillsSection } from "./components/skills-section";
 import { ProjectsSection } from "./components/projects-section";
 import { ContactSection } from "./components/contact-section";
 import { Footer } from "./components/footer";
+import { Cursor } from "./components/ui/inverted-cursor";
 
 export default function App() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-background text-foreground">
+      <div className="relative min-h-screen bg-background text-foreground">
+        <Cursor />
         <Navbar />
         <HeroSection />
         <AboutSection />
