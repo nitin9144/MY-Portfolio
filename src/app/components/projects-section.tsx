@@ -28,11 +28,11 @@ const projects: Project[] = [
       "Students often waste time visiting faculty rooms only to find them unavailable — in meetings, on leave, or out of campus. There's no centralized system to check a faculty member's current status or schedule. This app solves that.",
     image:
       "/Faculty_Availability_Tracker.png",
-    techStack: ["React", "Node.js", "Supabase", "Tailwind CSS","Postgresql","Figma"],
+    techStack: ["React", "Node.js", "Supabase", "Tailwind CSS", "Postgresql", "Figma"],
     github: "https://github.com/nitin9144/Faculty_Availability_Tracker-For-Students-.git",
     live: "https://faculty-availability-tracker-for-st.vercel.app/",
     category: "major",
-    highlights: ["JWT Auth & Role-based access", "Supabase integration","Only college students and faculty can use this app"],
+    highlights: ["JWT Auth & Role-based access", "Supabase integration", "Only college students and faculty can use this app"],
   },
   {
     id: 2,
@@ -42,7 +42,7 @@ const projects: Project[] = [
       "Trackly is a simple yet powerful price tracker that allows users to monitor the prices of their favorite e-commerce products and receive alerts when the price drops.",
     image:
       "/Trackly/Home.png",
-    techStack: ["Next.js", "Firecrawl", "PostgreSQL", "Supabase", "Tailwind CSS"],
+    techStack: ["Next.js", "Firecrawl", "Resend", "PostgreSQL", "Supabase", "Tailwind CSS"],
     github: "https://github.com/nitin9144/Trackly.git",
     live: "https://trackly-navy.vercel.app/",
     category: "major",
