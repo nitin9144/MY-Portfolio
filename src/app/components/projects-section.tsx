@@ -36,17 +36,17 @@ const projects: Project[] = [
   },
   {
     id: 2,
-    title: "ChatVerse - Real-time Chat App",
-    description: "Real-time messaging application with rooms, typing indicators, and file sharing.",
+    title: "Trackly - Price Tracker",
+    description: "Price tracker and alert system for e-commerce products.",
     longDescription:
-      "A feature-rich real-time chat application using WebSockets. Supports private messaging, group rooms, typing indicators, read receipts, and file/image sharing with preview.",
+      "Trackly is a simple yet powerful price tracker that allows users to monitor the prices of their favorite e-commerce products and receive alerts when the price drops.",
     image:
-      "https://images.unsplash.com/photo-1762340277380-04c2c30d0ef8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGF0JTIwYXBwbGljYXRpb24lMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzc0MzY3NTU5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    techStack: ["Next.js", "Socket.io", "PostgreSQL", "Prisma", "TypeScript"],
-    github: "https://github.com/yourusername/chatverse",
-    live: "https://chatverse-demo.vercel.app",
+      "/Trackly/Home.png",
+    techStack: ["Next.js", "Firecrawl", "PostgreSQL", "Supabase", "Tailwind CSS"],
+    github: "https://github.com/nitin9144/Trackly.git",
+    live: "https://trackly-navy.vercel.app/",
     category: "major",
-    highlights: ["WebSocket real-time communication", "File sharing with preview", "Online status & typing indicators"],
+    highlights: ["Price monitoring and alerting", "Supabase integration", "User-friendly interface"],
   },
 ];
 
