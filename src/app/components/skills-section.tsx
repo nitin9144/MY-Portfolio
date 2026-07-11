@@ -141,7 +141,7 @@ export function SkillsSection() {
             hoverSpeed={0}
             scaleOnHover
             fadeOut
-            fadeOutColor="#ffffff"
+            fadeOutColor="transparent"
             ariaLabel="Technology partners"
           />
         </div>
