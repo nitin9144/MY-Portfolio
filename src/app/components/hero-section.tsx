@@ -67,7 +67,10 @@ export function HeroSection() {
               <Mail size={16} /> Email
             </a>
             <a
-              href="#"
+              href="/Nitin%20Sharma%20Resume.docx"
+              target="_blank"
+              rel="noreferrer"
+              download="Nitin Sharma Resume.docx"
               className="flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border text-foreground hover:bg-accent transition text-[0.875rem]"
             >
               <FileText size={16} /> Resume
