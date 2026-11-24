@@ -6,34 +6,19 @@ type ChatMessage = {
   id: number;
   sender: "bot" | "user";
   text: string;
+  isError?: boolean;
 };
 
 const greeting = "Hi! I'm Nitin's assistant. What would you like to know?";
 const quickReplies = ["Projects", "Skills", "Experience", "Contact"];
+const CHAT_API_URL = "https://chatbot-fastapi-3-76wd.onrender.com/chat";
 
-function getReply(message: string): string {
-  const query = message.toLowerCase();
-
-  if (/\b(hi|hello|hey|greetings)\b/.test(query)) {
-    return "Hi there! Ask me about Nitin's projects, skills, experience, education, or contact details.";
-  }
-  if (/\b(project|projects|portfolio|work|built|build)\b/.test(query)) {
-    return "Nitin's projects include a Faculty Availability Tracker for Students and Trackly, a product price tracker. You can explore both in the Projects section.";
-  }
-  if (/\b(skill|skills|tech|technology|stack|know)\b/.test(query)) {
-    return "Nitin works with React, JavaScript, TypeScript, HTML, CSS, and Tailwind on the frontend. His backend and tools include Node.js, Express, MongoDB, PostgreSQL, Python, Git, VS Code, Figma, and Docker.";
-  }
-  if (/\b(experience|intern|internship|internships)\b/.test(query)) {
-    return "Nitin's experience includes a Web Development Intern role at InAmigos Foundation (IAF) (Sep-Oct 2026) and a Frontend Developer Intern role at Tesselonix Private Limited (Feb-Jul 2026).";
-  }
-  if (/\b(contact|email|linkedin|reach|connect)\b/.test(query)) {
-    return "You can email Nitin at nitinsharma9144063@email.com or connect on LinkedIn: linkedin.com/in/nitin-sharma-417b94382.";
-  }
-  if (/\b(education|college|degree|study|studies|university)\b/.test(query)) {
+function getOfflineReply(message: string): string | undefined {
+  if (/\b(college|university|degree|education|study|studied)\b/i.test(message)) {
     return "Nitin is pursuing a B.Tech in Computer Science at VIPS-TC.";
   }
 
-  return "I can help with Nitin's projects, skills, experience and internships, education, or contact details. What would you like to know?";
+  return undefined;
 }
 
 export function Chatbot() {
@@ -45,19 +30,21 @@ export function Chatbot() {
   ]);
   const messageEndRef = useRef<HTMLDivElement>(null);
   const nextIdRef = useRef(1);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     messageEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, isTyping]);
 
-  useEffect(() => () => {
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-  }, []);
-
-  const sendMessage = (text: string) => {
+  const sendMessage = async (text: string) => {
     const trimmed = text.trim();
     if (!trimmed || isTyping) return;
+
+    const conversation = messages
+      .filter((message) => message.id !== 0 && !message.isError)
+      .map((message) => ({
+        role: message.sender === "user" ? "user" as const : "assistant" as const,
+        content: message.text,
+      }));
 
     setMessages((current) => [
       ...current,
@@ -65,14 +52,50 @@ export function Chatbot() {
     ]);
     setInput("");
     setIsTyping(true);
-    timeoutRef.current = setTimeout(() => {
+
+    try {
+      const response = await fetch(CHAT_API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          messages: [...conversation, { role: "user", content: trimmed }],
+        }),
+        
+      });
+      console.log(response)
+      if (!response.ok) {
+        throw new Error(`Chat API request failed with status ${response.status}`);
+      }
+
+      const data: unknown = await response.json();
+      if (
+        typeof data !== "object" ||
+        data === null ||
+        !("reply" in data) ||
+        typeof data.reply !== "string"
+      ) {
+        throw new Error("Chat API returned an invalid response.");
+      }
+
       setMessages((current) => [
         ...current,
-        { id: nextIdRef.current++, sender: "bot", text: getReply(trimmed) },
+        { id: nextIdRef.current++, sender: "bot", text: data.reply },
       ]);
+    } catch (error) {
+      console.error("Unable to get a chatbot reply:", error);
+      setMessages((current) => [
+        ...current,
+        {
+          id: nextIdRef.current++,
+          sender: "bot",
+          text: getOfflineReply(trimmed)
+            ?? "Sorry, I couldn't reach the assistant right now. Please try again in a moment.",
+          isError: true,
+        },
+      ]);
+    } finally {
       setIsTyping(false);
-      timeoutRef.current = null;
-    }, 700);
+    }
   };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
