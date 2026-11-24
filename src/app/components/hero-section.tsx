@@ -23,7 +23,7 @@ export function HeroSection() {
           <h1 className="text-foreground transition-all duration-300 ease-in-out mb-4 flex items-center justify-center gap-2.5" style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)" }}>
             Hi, I'm <span className="text-violet-500  transition-all duration-300 ease-in-out ">
               <RotatingText
-                texts={['Nitin', 'Full Stack Developer', 'Coder']}
+                texts={['Nitin Sharma', 'AI Engineer','Software Engineer']}
                 mainClassName="px-2 sm:px-2 md:transition-all duration-300 ease-in-out md:px-3 bg-violet-500 text-white overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
                 staggerFrom={"last"}
                 initial={{ y: "100%" }}
